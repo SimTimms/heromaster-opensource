@@ -1,8 +1,9 @@
 import React from 'react';
+import './HeroMasterCard.css';
 import faker from 'faker';
 
 const playerCategory = category => {
-  return <div>{category}</div>;
+  return <div className="category">{category}</div>;
 };
 
 const playerName = name => {
@@ -18,7 +19,11 @@ const playerDescription = description => {
 };
 
 const playerImage = url => {
-  return <img src={url} alt="alt" />;
+  return (
+    <div className="playerImageWrapper">
+      <img src={url} alt="alt" />
+    </div>
+  );
 };
 
 const playerIcon = url => {
@@ -30,13 +35,15 @@ const footer = text => {
 };
 
 export const HeroMasterCard = () => (
-  <div>
-    {playerCategory('Player Category')}
-    {playerImage(faker.image.image())}
-    {playerName('Player Name')}
-    {playerIcon(faker.image.image())}
-    {playerType('Player Type')}
-    {playerDescription('Player Description')}
-    {footer('Footer')}
+  <div className="cardBorder">
+    <div className="cardInterior">
+      {playerCategory('Player Category')}
+      {playerImage(faker.image.image())}
+      {playerName('Player Name')}
+      {playerIcon(faker.image.image())}
+      {playerType('Player Type')}
+      {playerDescription('Player Description')}
+      {footer('Footer')}
+    </div>
   </div>
 );
