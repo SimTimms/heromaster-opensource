@@ -1,1 +1,0 @@
-export { HeroMasterCard } from './HeroMasterCard';
