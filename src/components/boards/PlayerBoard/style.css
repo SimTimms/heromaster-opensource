@@ -1,0 +1,39 @@
+.raceArea {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.classArea {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.weaponOneArea {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.weaponTwoArea {
+  grid-column-start: 4;
+  grid-row-start: 2;
+}
+
+.armourArea {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.attackOneArea {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.attackTwoArea {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.attackThreeArea {
+  grid-column-start: 4;
+  grid-row-start: 1;
+}

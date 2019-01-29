@@ -1,0 +1,9 @@
+.eventArea {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.bungleArea {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}

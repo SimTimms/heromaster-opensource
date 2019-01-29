@@ -1,0 +1,18 @@
+.cardBorder {
+  border: 1px solid #555;
+  width: 50px;
+  height: 70px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nonPhysicalBoard {
+  border: 1px dotted #555;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto auto auto auto;
+}
+
+.nonPhysicalBoard > div {
+  border: 1px dotted #ddd;
+}

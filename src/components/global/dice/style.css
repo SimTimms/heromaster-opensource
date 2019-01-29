@@ -1,0 +1,7 @@
+.diceBorder {
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin: 5px;
+  width: 75px;
+  height: 75px;
+}

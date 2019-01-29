@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './style.css';
+import '../global/style.css';
 import { Button } from 'semantic-ui-react';
 import { activateCard } from '../../actions';
 
