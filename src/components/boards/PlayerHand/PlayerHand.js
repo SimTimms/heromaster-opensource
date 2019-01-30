@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../global/style.css';
+import './style.css';
 import CardSpace from '../../global/CardSpace';
 
 class PlayerHand extends React.Component {
@@ -8,10 +9,10 @@ class PlayerHand extends React.Component {
       <div>
         Hand
         <div className="nonPhysicalBoard">
-          <div className="eventArea">
+          <div className="cardArea eventArea">
             <CardSpace cardType="event" />
           </div>
-          <div className="bungleArea">
+          <div className="cardArea bungleArea">
             <CardSpace cardType="bungle" />
           </div>
         </div>

@@ -1,0 +1,22 @@
+.deckArea {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.discardArea {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}

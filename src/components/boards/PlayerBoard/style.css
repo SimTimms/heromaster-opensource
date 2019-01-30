@@ -37,3 +37,27 @@
   grid-column-start: 4;
   grid-row-start: 1;
 }
+
+.cardArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.healthTrack {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.healthCounter {
+  width: 10%;
+  border: 1px solid #444;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
