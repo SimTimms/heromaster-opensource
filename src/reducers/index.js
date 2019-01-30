@@ -1,11 +1,16 @@
-import { ACTIVATE_CARD, CANCEL_CARD, PLACE_CARD } from '../actions/types';
+import { ACTIVATE_CARD, CANCEL_CARD } from '../actions/types';
 
 const INITIAL_STATE = {
   player1Race: null,
   player2Race: null,
   player1Class: null,
   player2Class: null,
-  position1: null
+  player1Weapon1: null,
+  player2Weapon1: null,
+  player1Weapon2: null,
+  player2Weapon2: null,
+  player1Armour: null,
+  player2Armour: null
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -23,12 +28,24 @@ export default (state = INITIAL_STATE, action) => {
             ...state,
             [`player${action.payload.player}Class`]: action.payload.cardId
           };
+        case 'weapon1':
+          return {
+            ...state,
+            [`player${action.payload.player}Weapon1`]: action.payload.cardId
+          };
+        case 'weapon2':
+          return {
+            ...state,
+            [`player${action.payload.player}Weapon2`]: action.payload.cardId
+          };
+        case 'armour':
+          return {
+            ...state,
+            [`player${action.payload.player}Armour`]: action.payload.cardId
+          };
         default:
           return state;
       }
-
-    case PLACE_CARD:
-      return { ...state, position1: action.payload };
 
     default:
       return state;

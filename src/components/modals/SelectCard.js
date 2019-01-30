@@ -26,7 +26,7 @@ export class SelectCard extends React.Component {
       <div>
         <Button onClick={this.handleClick}>{this.props.title}</Button>
         <Modal open={open} onClose={this.close}>
-          <Modal.Header>Choose your Race</Modal.Header>
+          <Modal.Header>{this.props.title}</Modal.Header>
           <Modal.Content>
             <Modal.Description>
               <div className="cardGrid">

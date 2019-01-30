@@ -16,6 +16,15 @@ const actionSelector = props => {
         props.playerNumber
       );
 
+    case 'chooseWeapon1':
+      return props.activateCard(props.cardId, 'weapon1', props.playerNumber);
+
+    case 'chooseWeapon2':
+      return props.activateCard(props.cardId, 'weapon2', props.playerNumber);
+
+    case 'chooseArmour':
+      return props.activateCard(props.cardId, 'armour', props.playerNumber);
+
     default:
       return null;
   }

@@ -8,6 +8,8 @@ import HealthTrack from './HealthTrack';
 import { SelectCard } from '../../modals';
 import { races } from '../../../data/races';
 import { classes } from '../../../data/classes';
+import { weapons } from '../../../data/weapons';
+import { armours } from '../../../data/armours';
 
 class PlayerBoard extends React.Component {
   raceCard = race => {
@@ -40,6 +42,36 @@ class PlayerBoard extends React.Component {
     );
   };
 
+  weaponCard = (weapon, position) => {
+    let title = 'Choose Your Weapon';
+    if (weapon !== null) {
+      title = weapon;
+    }
+    return (
+      <SelectCard
+        title={title}
+        cards={weapons}
+        action={`chooseWeapon${position}`}
+        playerNumber={this.props.playerNumber}
+      />
+    );
+  };
+
+  armourCard = armour => {
+    let title = 'Choose Your Armour';
+    if (armour !== null) {
+      title = armour;
+    }
+    return (
+      <SelectCard
+        title={title}
+        cards={armours}
+        action={`chooseArmour`}
+        playerNumber={this.props.playerNumber}
+      />
+    );
+  };
+
   render() {
     return (
       <div>
@@ -61,13 +93,13 @@ class PlayerBoard extends React.Component {
             {this.classCard(this.props.playerClass)}
           </div>
           <div className="cardArea weaponOneArea">
-            <CardSpace cardType="weapon" />
+            {this.weaponCard(this.props.weapon1, 1)}
           </div>
           <div className="cardArea weaponTwoArea">
-            <CardSpace cardType="weapon" />
+            {this.weaponCard(this.props.weapon2, 2)}
           </div>
           <div className="cardArea armourArea">
-            <CardSpace cardType="armour" />
+            {this.armourCard(this.props.armour)}
           </div>
           <HealthTrack />
         </div>
