@@ -6,12 +6,14 @@ import { Discard } from './Discard';
 
 class Deck extends React.Component {
   constructor(props) {
+    super(props);
     this.drawCard = this.drawCard.bind(this);
   }
 
   drawCard() {
     alert('Draw Card');
   }
+
   render() {
     return (
       <div>
@@ -21,7 +23,7 @@ class Deck extends React.Component {
             <CardSpace cardType="deck" onClick={this.drawCard} />
           </div>
           <div className="cardArea discardArea">
-            <Discard cardType="deck" />
+            <Discard cardType="discard" />
           </div>
         </div>
       </div>

@@ -1,0 +1,21 @@
+.cardGrid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tempButton {
+  cursor: pointer;
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 3px solid #222;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  background: url('../../assets/temp.JPG');
+  background-size: auto 100%;
+}
+
+.chooseCardWrapper h3 {
+  width: 100%;
+  text-align: center;
+}

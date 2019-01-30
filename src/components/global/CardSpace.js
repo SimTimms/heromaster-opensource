@@ -7,16 +7,22 @@ class CardSpace extends React.Component {
   placeCardHere = cardId => {
     this.props.placeCard(cardId);
   };
+
   render() {
-    return <div className="cardBorder">{this.props.cardType}</div>;
+    return (
+      <div className="cardSpaceBorder" onClick={this.props.onClick}>
+        {this.props.cardType}
+        {this.props.children}
+      </div>
+    );
   }
 }
 
-const maptStateToProps = state => {
-  return { activeCard: state.activeCard, position1: state.position1 };
+const mapStateToProps = state => {
+  return { position1: state.position1 };
 };
 
 export default connect(
-  maptStateToProps,
+  mapStateToProps,
   { placeCard }
 )(CardSpace);

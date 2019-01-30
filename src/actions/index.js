@@ -1,9 +1,9 @@
 import { ACTIVATE_CARD, CANCEL_CARD, PLACE_CARD } from './types';
 
-export const activateCard = cardId => {
+export const activateCard = (cardId, actionType, player) => {
   return {
     type: ACTIVATE_CARD,
-    payload: cardId
+    payload: { cardId, actionType, player }
   };
 };
 
