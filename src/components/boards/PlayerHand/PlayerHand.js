@@ -1,19 +1,30 @@
 import React from 'react';
 import '../../global/style.css';
 import './style.css';
-import CardSpace from '../../global/CardSpace';
+import { hand } from '../../../data/hand';
+import { SelectCard } from '../../modals';
 
 class PlayerHand extends React.Component {
+  handCard = () => {
+    let title = 'Look at Hand';
+
+    return (
+      <SelectCard
+        title={title}
+        cards={hand}
+        action={`chooseHand`}
+        playerNumber={this.props.playerNumber}
+      />
+    );
+  };
+
   render() {
     return (
       <div>
         Hand
         <div className="nonPhysicalBoard">
-          <div className="cardArea eventArea">
-            <CardSpace cardType="event" />
-          </div>
-          <div className="cardArea bungleArea">
-            <CardSpace cardType="bungle" />
+          <div className="cardArea handArea">
+            {this.handCard(this.props.hand)}
           </div>
         </div>
       </div>

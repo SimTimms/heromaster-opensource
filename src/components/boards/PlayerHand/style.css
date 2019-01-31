@@ -1,12 +1,4 @@
-.eventArea {
-  grid-column-start: 2;
-  grid-row-start: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.bungleArea {
+.handArea {
   grid-column-start: 1;
   grid-row-start: 1;
   display: flex;

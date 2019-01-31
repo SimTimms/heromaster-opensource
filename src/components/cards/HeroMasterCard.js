@@ -8,7 +8,7 @@ const playerName = name => {
 
 class HeroMasterCard extends React.Component {
   render() {
-    return <div className="cardBorder">{playerName('Player Name')}</div>;
+    return <div className="cardBorder">{playerName('Player name')}</div>;
   }
 }
 

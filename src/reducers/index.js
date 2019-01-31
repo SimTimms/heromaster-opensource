@@ -10,7 +10,9 @@ const INITIAL_STATE = {
   player1Weapon2: null,
   player2Weapon2: null,
   player1Armour: null,
-  player2Armour: null
+  player2Armour: null,
+  player1Attack: null,
+  player2Attack: null
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -42,6 +44,11 @@ export default (state = INITIAL_STATE, action) => {
           return {
             ...state,
             [`player${action.payload.player}Armour`]: action.payload.cardId
+          };
+        case 'attack':
+          return {
+            ...state,
+            [`player${action.payload.player}Attack`]: action.payload.cardId
           };
         default:
           return state;

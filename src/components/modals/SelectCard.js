@@ -31,14 +31,26 @@ export class SelectCard extends React.Component {
             <Modal.Description>
               <div className="cardGrid">
                 {this.props.cards.map(card => {
+                  //highlight cards that are playable
+                  let usableClassName = '';
+                  if (
+                    this.props.action === 'chooseAttack' &&
+                    card.type !== 'attack' &&
+                    card.type !== 'event'
+                  ) {
+                    usableClassName = 'inactive';
+                  }
+
                   return (
                     <Confirm
-                      key={`${this.props.playerNumber}-${card.Name}`}
-                      title={card.Name}
+                      key={`${this.props.playerNumber}-${card.name}`}
+                      title={card.name}
                       action={this.props.action}
-                      cardId={card.Id}
+                      cardId={card.id}
                       playerNumber={this.props.playerNumber}
                       close={this.close}
+                      cardType={card.type}
+                      usableClassName={usableClassName}
                     />
                   );
                 })}

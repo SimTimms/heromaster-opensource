@@ -19,6 +19,7 @@ class App extends Component {
               weapon1={this.props.player1Weapon1}
               weapon2={this.props.player1Weapon2}
               armour={this.props.player1Armour}
+              attack={this.props.player1Attack}
             />
             <PlayerBoard
               playerNumber={2}
@@ -27,6 +28,7 @@ class App extends Component {
               weapon1={this.props.player2Weapon1}
               weapon2={this.props.player2Weapon2}
               armour={this.props.player2Armour}
+              attack={this.props.player1Attack}
             />
           </Game>
           <LocationBoard />
@@ -49,7 +51,9 @@ const mapStateToProps = state => {
     player1Weapon2: state.player1Weapon2,
     player2Weapon2: state.player2Weapon2,
     player1Armour: state.player1Armour,
-    player2Armour: state.player2Armour
+    player2Armour: state.player2Armour,
+    player1Attack: state.player1Attack,
+    player2Attack: state.player2Attack
   };
 };
 

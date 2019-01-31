@@ -1,19 +1,19 @@
 export const weapons = [
   {
-    Name: 'Sword',
-    Id: 'sword'
+    name: 'Sword',
+    id: 'sword'
   },
 
   {
-    Name: 'Mallet',
-    Id: 'mallet'
+    name: 'Mallet',
+    id: 'mallet'
   },
   {
-    Name: 'Knife',
-    Id: 'knife'
+    name: 'Knife',
+    id: 'knife'
   },
   {
-    Name: 'Spear',
-    Id: 'spear'
+    name: 'Spear',
+    id: 'spear'
   }
 ];

@@ -25,6 +25,9 @@ const actionSelector = props => {
     case 'chooseArmour':
       return props.activateCard(props.cardId, 'armour', props.playerNumber);
 
+    case 'chooseAttack':
+      return props.activateCard(props.cardId, 'attack', props.playerNumber);
+
     default:
       return null;
   }
@@ -48,11 +51,16 @@ class Confirm extends React.Component {
 
   render() {
     const { open } = this.state;
+    const { usableClassName } = this.props;
 
     return (
       <div className="chooseCardWrapper">
         <h3> {this.props.title}</h3>
-        <div className="tempButton" onClick={this.handleClick} />
+        <h4> {this.props.cardType}</h4>
+        <div
+          className={`tempButton ${usableClassName}`}
+          onClick={this.handleClick}
+        />
         <Modal open={open} onClose={this.close}>
           <Modal.Header>{`Are you sure you want to be a ${
             this.props.title

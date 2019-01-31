@@ -1,7 +1,5 @@
 import './style.css';
 import React from 'react';
-
-import CardSpace from '../../global/CardSpace';
 import { PlayerHand } from '../PlayerHand';
 import { Deck } from '../Deck';
 import HealthTrack from './HealthTrack';
@@ -10,6 +8,7 @@ import { races } from '../../../data/races';
 import { classes } from '../../../data/classes';
 import { weapons } from '../../../data/weapons';
 import { armours } from '../../../data/armours';
+import { hand } from '../../../data/hand';
 
 class PlayerBoard extends React.Component {
   raceCard = race => {
@@ -72,6 +71,22 @@ class PlayerBoard extends React.Component {
     );
   };
 
+  attackCard = (attack, attackNumber) => {
+    let title = 'Choose Your Attack';
+    if (attack !== null) {
+      title = attack;
+    }
+    return (
+      <SelectCard
+        title={title}
+        cards={hand}
+        action={`chooseAttack`}
+        attackNumber={attackNumber}
+        playerNumber={this.props.playerNumber}
+      />
+    );
+  };
+
   render() {
     return (
       <div>
@@ -81,13 +96,13 @@ class PlayerBoard extends React.Component {
             {this.raceCard(this.props.race)}
           </div>
           <div className="cardArea attackOneArea">
-            <CardSpace cardType="attack" />
+            {this.attackCard(this.props.attack, 1)}
           </div>
           <div className="cardArea attackTwoArea">
-            <CardSpace cardType="attack" />
+            {this.attackCard(this.props.attack, 2)}
           </div>
           <div className="cardArea attackThreeArea">
-            <CardSpace cardType="attack" />
+            {this.attackCard(this.props.attack, 3)}
           </div>
           <div className="cardArea classArea">
             {this.classCard(this.props.playerClass)}

@@ -1,19 +1,19 @@
 export const classes = [
   {
-    Name: 'Thief',
-    Id: 'thief'
+    name: 'Thief',
+    id: 'thief'
   },
 
   {
-    Name: 'Barbarian',
-    Id: 'barbarian'
+    name: 'Barbarian',
+    id: 'barbarian'
   },
   {
-    Name: 'Wizard',
-    Id: 'wizard'
+    name: 'Wizard',
+    id: 'wizard'
   },
   {
-    Name: 'Bard',
-    Id: 'bard'
+    name: 'Bard',
+    id: 'bard'
   }
 ];

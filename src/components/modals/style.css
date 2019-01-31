@@ -1,6 +1,7 @@
 .cardGrid {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  justify-items: center;
 }
 
 .tempButton {
@@ -15,7 +16,19 @@
   background-size: auto 100%;
 }
 
+.inactive {
+  opacity: 0.3;
+}
+
 .chooseCardWrapper h3 {
-  width: 100%;
   text-align: center;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.chooseCardWrapper h4 {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin: 0;
 }
