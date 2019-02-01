@@ -1,60 +1,10 @@
-import { ACTIVATE_CARD, CANCEL_CARD } from '../actions/types';
+import { combineReducers } from 'redux';
+import monster from './monster';
+import player from './player';
+import playerActions from './playerActions';
 
-const INITIAL_STATE = {
-  player1Race: null,
-  player2Race: null,
-  player1Class: null,
-  player2Class: null,
-  player1Weapon1: null,
-  player2Weapon1: null,
-  player1Weapon2: null,
-  player2Weapon2: null,
-  player1Armour: null,
-  player2Armour: null,
-  player1Attack: null,
-  player2Attack: null
-};
-
-export default (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case ACTIVATE_CARD:
-    case CANCEL_CARD:
-      switch (action.payload.actionType) {
-        case 'race':
-          return {
-            ...state,
-            [`player${action.payload.player}Race`]: action.payload.cardId
-          };
-        case 'playerClass':
-          return {
-            ...state,
-            [`player${action.payload.player}Class`]: action.payload.cardId
-          };
-        case 'weapon1':
-          return {
-            ...state,
-            [`player${action.payload.player}Weapon1`]: action.payload.cardId
-          };
-        case 'weapon2':
-          return {
-            ...state,
-            [`player${action.payload.player}Weapon2`]: action.payload.cardId
-          };
-        case 'armour':
-          return {
-            ...state,
-            [`player${action.payload.player}Armour`]: action.payload.cardId
-          };
-        case 'attack':
-          return {
-            ...state,
-            [`player${action.payload.player}Attack`]: action.payload.cardId
-          };
-        default:
-          return state;
-      }
-
-    default:
-      return state;
-  }
-};
+export default combineReducers({
+  monster,
+  player,
+  playerActions
+});

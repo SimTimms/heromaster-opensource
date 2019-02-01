@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import { connect } from 'react-redux';
 import { LocationBoard, RewardBoard } from './components/boards';
@@ -8,6 +9,7 @@ import Game from './components/game/Game';
 
 class App extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <div className="table">
@@ -19,7 +21,15 @@ class App extends Component {
               weapon1={this.props.player1Weapon1}
               weapon2={this.props.player1Weapon2}
               armour={this.props.player1Armour}
-              attack={this.props.player1Attack}
+              attack1={this.props.player1Attack1}
+              attack2={this.props.player1Attack2}
+              attack3={this.props.player1Attack3}
+            />
+            <LocationBoard
+              monster1={this.props.monster1}
+              currentActionPlayer={this.props.currentActionPlayer}
+              currentActionTarget={this.props.currentActionTarget}
+              currentAction={this.props.currentAction}
             />
             <PlayerBoard
               playerNumber={2}
@@ -28,10 +38,12 @@ class App extends Component {
               weapon1={this.props.player2Weapon1}
               weapon2={this.props.player2Weapon2}
               armour={this.props.player2Armour}
-              attack={this.props.player1Attack}
+              attack1={this.props.player2Attack1}
+              attack2={this.props.player2Attack2}
+              attack3={this.props.player2Attack3}
             />
           </Game>
-          <LocationBoard />
+
           <RewardBoard />
           <Dice />
         </div>
@@ -41,19 +53,30 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
+  let player = state.player;
+  let monster = state.monster;
+  let playerActions = state.playerActions;
   return {
-    player1Race: state.player1Race,
-    player2Race: state.player2Race,
-    player1Class: state.player1Class,
-    player2Class: state.player2Class,
-    player1Weapon1: state.player1Weapon1,
-    player2Weapon1: state.player2Weapon1,
-    player1Weapon2: state.player1Weapon2,
-    player2Weapon2: state.player2Weapon2,
-    player1Armour: state.player1Armour,
-    player2Armour: state.player2Armour,
-    player1Attack: state.player1Attack,
-    player2Attack: state.player2Attack
+    player1Race: player.player1Race,
+    player2Race: player.player2Race,
+    player1Class: player.player1Class,
+    player2Class: player.player2Class,
+    player1Weapon1: player.player1Weapon1,
+    player2Weapon1: player.player2Weapon1,
+    player1Weapon2: player.player1Weapon2,
+    player2Weapon2: player.player2Weapon2,
+    player1Armour: player.player1Armour,
+    player2Armour: player.player2Armour,
+    player1Attack1: player.player1Attack1,
+    player2Attack1: player.player2Attack1,
+    player1Attack2: player.player1Attack2,
+    player2Attack2: player.player2Attack2,
+    player1Attack3: player.player1Attack3,
+    player2Attack3: player.player2Attack3,
+    monster1: monster.monster1,
+    currentActionPlayer: playerActions.player,
+    currentActionTarget: playerActions.target,
+    currentAction: playerActions.currentAction
   };
 };
 

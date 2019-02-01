@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Modal } from 'semantic-ui-react';
 import Confirm from './Confirm';
 
-export class SelectCard extends React.Component {
+export class CreateCards extends React.Component {
   state = { open: false };
 
   handleClick = () => {
@@ -34,7 +34,9 @@ export class SelectCard extends React.Component {
                   //highlight cards that are playable
                   let usableClassName = '';
                   if (
-                    this.props.action === 'chooseAttack' &&
+                    (this.props.action === 'chooseAttack1' ||
+                      this.props.action === 'chooseAttack2' ||
+                      this.props.action === 'chooseAttack3') &&
                     card.type !== 'attack' &&
                     card.type !== 'event'
                   ) {

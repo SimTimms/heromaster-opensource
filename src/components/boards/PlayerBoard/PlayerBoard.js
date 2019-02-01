@@ -1,9 +1,8 @@
-import './style.css';
 import React from 'react';
 import { PlayerHand } from '../PlayerHand';
 import { Deck } from '../Deck';
 import HealthTrack from './HealthTrack';
-import { SelectCard } from '../../modals';
+import { CreateCards } from '../../modals';
 import { races } from '../../../data/races';
 import { classes } from '../../../data/classes';
 import { weapons } from '../../../data/weapons';
@@ -17,7 +16,7 @@ class PlayerBoard extends React.Component {
       title = race;
     }
     return (
-      <SelectCard
+      <CreateCards
         title={title}
         cards={races}
         action="chooseRace"
@@ -32,7 +31,7 @@ class PlayerBoard extends React.Component {
       title = playerClass;
     }
     return (
-      <SelectCard
+      <CreateCards
         title={title}
         cards={classes}
         action="chooseClass"
@@ -47,7 +46,7 @@ class PlayerBoard extends React.Component {
       title = weapon;
     }
     return (
-      <SelectCard
+      <CreateCards
         title={title}
         cards={weapons}
         action={`chooseWeapon${position}`}
@@ -62,7 +61,7 @@ class PlayerBoard extends React.Component {
       title = armour;
     }
     return (
-      <SelectCard
+      <CreateCards
         title={title}
         cards={armours}
         action={`chooseArmour`}
@@ -77,12 +76,12 @@ class PlayerBoard extends React.Component {
       title = attack;
     }
     return (
-      <SelectCard
+      <CreateCards
         title={title}
         cards={hand}
-        action={`chooseAttack`}
-        attackNumber={attackNumber}
+        action={`chooseAttack${attackNumber}`}
         playerNumber={this.props.playerNumber}
+        attackNumber={attackNumber}
       />
     );
   };
@@ -96,13 +95,13 @@ class PlayerBoard extends React.Component {
             {this.raceCard(this.props.race)}
           </div>
           <div className="cardArea attackOneArea">
-            {this.attackCard(this.props.attack, 1)}
+            {this.attackCard(this.props.attack1, 1)}
           </div>
           <div className="cardArea attackTwoArea">
-            {this.attackCard(this.props.attack, 2)}
+            {this.attackCard(this.props.attack2, 2)}
           </div>
           <div className="cardArea attackThreeArea">
-            {this.attackCard(this.props.attack, 3)}
+            {this.attackCard(this.props.attack3, 3)}
           </div>
           <div className="cardArea classArea">
             {this.classCard(this.props.playerClass)}

@@ -2,14 +2,14 @@ import React from 'react';
 import '../../global/style.css';
 import './style.css';
 import { hand } from '../../../data/hand';
-import { SelectCard } from '../../modals';
+import { CreateCards } from '../../modals';
 
 class PlayerHand extends React.Component {
   handCard = () => {
     let title = 'Look at Hand';
 
     return (
-      <SelectCard
+      <CreateCards
         title={title}
         cards={hand}
         action={`chooseHand`}
