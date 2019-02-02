@@ -1,19 +1,27 @@
 export const races = [
   {
-    name: 'Human',
-    id: 'human'
+    key: 'human',
+    values: {
+      name: 'Human'
+    }
   },
 
   {
-    name: 'Elf',
-    id: 'elf'
+    key: 'elf',
+    values: {
+      name: 'Elf'
+    }
   },
   {
-    name: 'Dwarf',
-    id: 'dwarf'
+    key: 'dwarf',
+    values: {
+      name: 'Dwarf'
+    }
   },
   {
-    name: 'Halfling',
-    id: 'halfling'
+    key: 'halfling',
+    values: {
+      name: 'Halfling'
+    }
   }
 ];

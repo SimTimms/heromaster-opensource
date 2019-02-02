@@ -1,21 +1,27 @@
 export const monsters = [
   {
-    name: 'Orc',
-    id: 'orc',
-    defense: 1,
-    attack: 2
+    key: 'orc',
+    values: {
+      name: 'Orc',
+      defense: 1,
+      attack: 2
+    }
   },
 
   {
-    name: 'Goblin',
-    id: 'goblin',
-    defense: 1,
-    attack: 2
+    key: 'goblin',
+    values: {
+      name: 'Goblin',
+      defense: 1,
+      attack: 2
+    }
   },
   {
-    name: 'Dragon',
-    id: 'dragon',
-    defense: 1,
-    attack: 2
+    key: 'dragon',
+    values: {
+      name: 'Dragon',
+      defense: 1,
+      attack: 2
+    }
   }
 ];

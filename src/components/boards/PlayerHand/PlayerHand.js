@@ -2,19 +2,22 @@ import React from 'react';
 import '../../global/style.css';
 import './style.css';
 import { hand } from '../../../data/hand';
-import { CreateCards } from '../../modals';
+
+import { ModalButton } from '../../modals';
+import { ListCards } from '../../modals';
 
 class PlayerHand extends React.Component {
   handCard = () => {
     let title = 'Look at Hand';
 
     return (
-      <CreateCards
-        title={title}
-        cards={hand}
-        action={`chooseHand`}
-        playerNumber={this.props.playerNumber}
-      />
+      <ModalButton title={title}>
+        <ListCards
+          cards={hand}
+          action={`chooseHand`}
+          playerNumber={this.props.playerNumber}
+        />
+      </ModalButton>
     );
   };
 

@@ -3,3 +3,4 @@ export const ACTIVATE_MONSTER = 'ACTIVATE_MONSTER';
 export const CANCEL_CARD = 'CANCEL_CARD';
 export const PLACE_CARD = 'PLACE_CARD';
 export const PLAYER_ACTION = 'PLAYER_ACTION';
+export const RESOLVE_COMBAT = 'RESOLVE_COMBAT';

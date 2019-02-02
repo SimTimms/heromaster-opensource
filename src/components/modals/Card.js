@@ -56,7 +56,7 @@ const actionSelector = props => {
       return null;
   }
 };
-class ChooseMonster extends React.Component {
+class Card extends React.Component {
   state = { open: false };
 
   handleClick = () => {
@@ -114,11 +114,7 @@ class ChooseMonster extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { player1Race: state.player1Race, player2Race: state.player2Race };
-};
-
 export default connect(
-  mapStateToProps,
+  null,
   { activateCard, activateMonster, playerAction }
-)(ChooseMonster);
+)(Card);

@@ -49,21 +49,6 @@ export default (state = INITIAL_STATE, action) => {
             ...state,
             [`player${action.payload.player}Armour`]: action.payload.cardId
           };
-        case 'attack1':
-          return {
-            ...state,
-            [`player${action.payload.player}Attack1`]: action.payload.cardId
-          };
-        case 'attack2':
-          return {
-            ...state,
-            [`player${action.payload.player}Attack2`]: action.payload.cardId
-          };
-        case 'attack3':
-          return {
-            ...state,
-            [`player${action.payload.player}Attack3`]: action.payload.cardId
-          };
 
         default:
           return state;

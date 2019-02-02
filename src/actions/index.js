@@ -3,7 +3,8 @@ import {
   ACTIVATE_MONSTER,
   PLAYER_ACTION,
   CANCEL_CARD,
-  PLACE_CARD
+  PLACE_CARD,
+  RESOLVE_COMBAT
 } from './types';
 
 export const activateCard = (cardId, actionType, player) => {
@@ -17,6 +18,13 @@ export const playerAction = (cardId, actionType, player, target) => {
   return {
     type: PLAYER_ACTION,
     payload: { cardId, actionType, player, target }
+  };
+};
+
+export const resolveCombat = target => {
+  return {
+    type: RESOLVE_COMBAT,
+    payload: { target }
   };
 };
 

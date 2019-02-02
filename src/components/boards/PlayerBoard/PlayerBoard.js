@@ -2,12 +2,13 @@ import React from 'react';
 import { PlayerHand } from '../PlayerHand';
 import { Deck } from '../Deck';
 import HealthTrack from './HealthTrack';
-import { CreateCards } from '../../modals';
 import { races } from '../../../data/races';
 import { classes } from '../../../data/classes';
 import { weapons } from '../../../data/weapons';
 import { armours } from '../../../data/armours';
 import { hand } from '../../../data/hand';
+import { ModalButton } from '../../modals';
+import { ListCards } from '../../modals';
 
 class PlayerBoard extends React.Component {
   raceCard = race => {
@@ -16,12 +17,13 @@ class PlayerBoard extends React.Component {
       title = race;
     }
     return (
-      <CreateCards
-        title={title}
-        cards={races}
-        action="chooseRace"
-        playerNumber={this.props.playerNumber}
-      />
+      <ModalButton title={title}>
+        <ListCards
+          cards={races}
+          action="chooseRace"
+          playerNumber={this.props.playerNumber}
+        />
+      </ModalButton>
     );
   };
 
@@ -31,12 +33,13 @@ class PlayerBoard extends React.Component {
       title = playerClass;
     }
     return (
-      <CreateCards
-        title={title}
-        cards={classes}
-        action="chooseClass"
-        playerNumber={this.props.playerNumber}
-      />
+      <ModalButton title={title}>
+        <ListCards
+          cards={classes}
+          action="chooseClass"
+          playerNumber={this.props.playerNumber}
+        />
+      </ModalButton>
     );
   };
 
@@ -46,12 +49,13 @@ class PlayerBoard extends React.Component {
       title = weapon;
     }
     return (
-      <CreateCards
-        title={title}
-        cards={weapons}
-        action={`chooseWeapon${position}`}
-        playerNumber={this.props.playerNumber}
-      />
+      <ModalButton title={title}>
+        <ListCards
+          cards={weapons}
+          action={`chooseWeapon${position}`}
+          playerNumber={this.props.playerNumber}
+        />
+      </ModalButton>
     );
   };
 
@@ -61,12 +65,13 @@ class PlayerBoard extends React.Component {
       title = armour;
     }
     return (
-      <CreateCards
-        title={title}
-        cards={armours}
-        action={`chooseArmour`}
-        playerNumber={this.props.playerNumber}
-      />
+      <ModalButton title={title}>
+        <ListCards
+          cards={armours}
+          action={`chooseArmour`}
+          playerNumber={this.props.playerNumber}
+        />
+      </ModalButton>
     );
   };
 
@@ -76,13 +81,14 @@ class PlayerBoard extends React.Component {
       title = attack;
     }
     return (
-      <CreateCards
-        title={title}
-        cards={hand}
-        action={`chooseAttack${attackNumber}`}
-        playerNumber={this.props.playerNumber}
-        attackNumber={attackNumber}
-      />
+      <ModalButton title={title}>
+        <ListCards
+          cards={hand}
+          action={`chooseAttack${attackNumber}`}
+          playerNumber={this.props.playerNumber}
+          attackNumber={attackNumber}
+        />
+      </ModalButton>
     );
   };
 

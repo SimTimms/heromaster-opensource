@@ -12,7 +12,7 @@ export default (state = INITIAL_STATE, action) => {
         case 'monster1':
           return {
             ...state,
-            [`monster1`]: action.payload.cardId
+            monster1: action.payload.cardId
           };
 
         default:

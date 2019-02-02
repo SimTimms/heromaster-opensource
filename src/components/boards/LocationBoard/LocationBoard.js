@@ -1,7 +1,9 @@
 import React from 'react';
 import './style.css';
-import { ActionTile } from '../../modals';
+import { ModalButton } from '../../modals';
+import { ListCards } from '../../modals';
 import { monsters } from '../../../data/monsters';
+import FightButton from '../../combat/FightButton';
 
 class LocationBoard extends React.Component {
   monsterCard = (
@@ -12,27 +14,28 @@ class LocationBoard extends React.Component {
   ) => {
     if (currentAction === 'attack1') {
       return (
-        <ActionTile
+        <ModalButton
           title={`Target this ${monster}`}
-          cards={monsters}
+          action="targetThis"
           monsterNumber={monsterNumber}
           currentAction={currentAction}
           currentActionTarget={currentActionTarget}
-        />
+        >
+          <FightButton action="targetThis" targetId={monster} />
+        </ModalButton>
       );
     } else {
       return (
-        <ActionTile
-          title="Choose a Monster"
-          cards={monsters}
-          action="chooseMonster"
-          monsterNumber={monsterNumber}
-        />
+        <ModalButton title={monster ? monster : 'Choose a Monster'}>
+          <ListCards
+            cards={monsters}
+            action="chooseMonster"
+            monsterNumber={monsterNumber}
+          />
+        </ModalButton>
       );
     }
   };
-
-  onClickSwitch = () => {};
 
   render() {
     return (

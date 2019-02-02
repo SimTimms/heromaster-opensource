@@ -1,19 +1,26 @@
 export const armours = [
   {
-    name: 'Armour',
-    id: 'armour'
-  },
-
-  {
-    name: 'Robe',
-    id: 'robe'
+    key: 'armour',
+    values: {
+      name: 'Armour'
+    }
   },
   {
-    name: 'Cloth',
-    id: 'cloth'
+    key: 'robe',
+    values: {
+      name: 'Robe'
+    }
   },
   {
-    name: 'Helmet',
-    id: 'helmet'
+    key: 'cloth',
+    values: {
+      name: 'Cloth'
+    }
+  },
+  {
+    key: 'helmet',
+    values: {
+      name: 'Helmet'
+    }
   }
 ];

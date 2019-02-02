@@ -56,6 +56,8 @@ const mapStateToProps = state => {
   let player = state.player;
   let monster = state.monster;
   let playerActions = state.playerActions;
+
+  console.log(playerActions, monster);
   return {
     player1Race: player.player1Race,
     player2Race: player.player2Race,
@@ -67,16 +69,12 @@ const mapStateToProps = state => {
     player2Weapon2: player.player2Weapon2,
     player1Armour: player.player1Armour,
     player2Armour: player.player2Armour,
-    player1Attack1: player.player1Attack1,
-    player2Attack1: player.player2Attack1,
-    player1Attack2: player.player1Attack2,
-    player2Attack2: player.player2Attack2,
-    player1Attack3: player.player1Attack3,
-    player2Attack3: player.player2Attack3,
+    player1Attack1: playerActions.player1Attack1,
     monster1: monster.monster1,
-    currentActionPlayer: playerActions.player,
-    currentActionTarget: playerActions.target,
-    currentAction: playerActions.currentAction
+    currentActionPlayer: playerActions.currentActionPlayer,
+    currentActionTarget: playerActions.currentActionTarget,
+    currentAction: playerActions.currentAction,
+    currentActionCard: playerActions.currentActionCard
   };
 };
 
