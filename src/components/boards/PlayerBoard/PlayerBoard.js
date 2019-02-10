@@ -121,7 +121,7 @@ class PlayerBoard extends React.Component {
           <div className="cardArea armourArea">
             {this.armourCard(this.props.armour)}
           </div>
-          <HealthTrack />
+          <HealthTrack playerHealth={this.props.playerHealth} />
         </div>
         <PlayerHand />
         <Deck />

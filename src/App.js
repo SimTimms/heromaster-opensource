@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import { connect } from 'react-redux';
 import { LocationBoard, RewardBoard } from './components/boards';
@@ -9,7 +8,6 @@ import Game from './components/game/Game';
 
 class App extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <div className="table">
@@ -24,6 +22,7 @@ class App extends Component {
               attack1={this.props.player1Attack1}
               attack2={this.props.player1Attack2}
               attack3={this.props.player1Attack3}
+              playerHealth={this.props.player1Health}
             />
             <LocationBoard
               monster1={this.props.monster1}
@@ -41,6 +40,7 @@ class App extends Component {
               attack1={this.props.player2Attack1}
               attack2={this.props.player2Attack2}
               attack3={this.props.player2Attack3}
+              playerHealth={this.props.player2Health}
             />
           </Game>
 
@@ -53,22 +53,21 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  let player = state.player;
   let monster = state.monster;
   let playerActions = state.playerActions;
-
-  console.log(playerActions, monster);
   return {
-    player1Race: player.player1Race,
-    player2Race: player.player2Race,
-    player1Class: player.player1Class,
-    player2Class: player.player2Class,
-    player1Weapon1: player.player1Weapon1,
-    player2Weapon1: player.player2Weapon1,
-    player1Weapon2: player.player1Weapon2,
-    player2Weapon2: player.player2Weapon2,
-    player1Armour: player.player1Armour,
-    player2Armour: player.player2Armour,
+    player1Race: playerActions.player1Race,
+    player2Race: playerActions.player2Race,
+    player1Class: playerActions.player1Class,
+    player2Class: playerActions.player2Class,
+    player1Health: playerActions.player1Health,
+    player2Health: playerActions.player2Health,
+    player1Weapon1: playerActions.player1Weapon1,
+    player2Weapon1: playerActions.player2Weapon1,
+    player1Weapon2: playerActions.player1Weapon2,
+    player2Weapon2: playerActions.player2Weapon2,
+    player1Armour: playerActions.player1Armour,
+    player2Armour: playerActions.player2Armour,
     player1Attack1: playerActions.player1Attack1,
     monster1: monster.monster1,
     currentActionPlayer: playerActions.currentActionPlayer,

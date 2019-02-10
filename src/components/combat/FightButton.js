@@ -1,15 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { resolveCombat } from '../../actions';
+import { intiateCombat } from '../../actions';
 import { Button } from 'semantic-ui-react';
-import { monsters } from '../../data/monsters';
 
 class FightButton extends React.Component {
   render() {
     return (
       <Button
         onClick={() => {
-          this.props.resolveCombat(this.props.targetId);
+          this.props.intiateCombat(this.props.targetId);
         }}
       >
         Fight
@@ -19,7 +18,6 @@ class FightButton extends React.Component {
 }
 
 const mapStateToProps = state => {
-  let monster = state.monster;
   let playerActions = state.playerActions;
 
   return {
@@ -32,5 +30,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { resolveCombat }
+  { intiateCombat }
 )(FightButton);

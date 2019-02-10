@@ -4,6 +4,7 @@ import {
   PLAYER_ACTION,
   CANCEL_CARD,
   PLACE_CARD,
+  INITIATE_COMBAT,
   RESOLVE_COMBAT
 } from './types';
 
@@ -21,10 +22,16 @@ export const playerAction = (cardId, actionType, player, target) => {
   };
 };
 
-export const resolveCombat = target => {
+export const intiateCombat = target => {
   return {
-    type: RESOLVE_COMBAT,
+    type: INITIATE_COMBAT,
     payload: { target }
+  };
+};
+
+export const resolveCombat = () => {
+  return {
+    type: RESOLVE_COMBAT
   };
 };
 

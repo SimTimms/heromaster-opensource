@@ -3,17 +3,16 @@ export const monsters = [
     key: 'orc',
     values: {
       name: 'Orc',
-      defense: 1,
-      attack: 2
+      defense: 10,
+      wounds: 2
     }
   },
-
   {
     key: 'goblin',
     values: {
       name: 'Goblin',
       defense: 1,
-      attack: 2
+      wounds: 2
     }
   },
   {
@@ -21,7 +20,7 @@ export const monsters = [
     values: {
       name: 'Dragon',
       defense: 1,
-      attack: 2
+      wounds: 2
     }
   }
 ];

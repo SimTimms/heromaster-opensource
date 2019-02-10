@@ -15,7 +15,12 @@ class HealthTrack extends React.Component {
   };
 
   render() {
-    return <div className="healthTrack">{this.generateHealth()}</div>;
+    return (
+      <div className="healthTrack">
+        {this.props.playerHealth}
+        {this.generateHealth()}
+      </div>
+    );
   }
 }
 
