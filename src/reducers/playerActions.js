@@ -2,7 +2,7 @@ import {
   PLAYER_ACTION,
   INITIATE_COMBAT,
   ACTIVATE_CARD,
-  CANCEL_CARD
+  CANCEL_CARD,
 } from '../actions/types';
 import { monsters } from '../data/monsters';
 import { hand } from '../data/hand';
@@ -20,24 +20,23 @@ export default (state = INITIAL_STATE, action) => {
             currentActionTarget: action.payload.target,
             currentAction: action.payload.actionType,
             currentActionCard: action.payload.cardId,
-            [`player${action.payload.player}Attack1`]: action.payload.cardId
+            [`player${action.payload.player}Attack1`]: action.payload.cardId,
           };
 
         default:
           return state;
       }
     case INITIATE_COMBAT:
-      console.log('ad');
       const targetMonster = action.payload.target;
 
       const actionCardValues = hand.filter(
-        card => card.key === state.player1Attack1
+        card => card.key === state.player1Attack1,
       );
       const monsterValues = monsters.filter(
-        monster => monster.key === targetMonster
+        monster => monster.key === targetMonster,
       );
       const armourValue = armours.filter(
-        armour => armour.key === state.player1Armour
+        armour => armour.key === state.player1Armour,
       );
 
       const monsterDefense = monsterValues[0].values.defense;
@@ -58,7 +57,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         currentActionTarget: action.payload.target,
-        player1Health: playerHealth
+        player1Health: playerHealth,
       };
 
     case ACTIVATE_CARD:
@@ -67,27 +66,27 @@ export default (state = INITIAL_STATE, action) => {
         case 'race':
           return {
             ...state,
-            [`player${action.payload.player}Race`]: action.payload.cardId
+            [`player${action.payload.player}Race`]: action.payload.cardId,
           };
         case 'playerClass':
           return {
             ...state,
-            [`player${action.payload.player}Class`]: action.payload.cardId
+            [`player${action.payload.player}Class`]: action.payload.cardId,
           };
         case 'weapon1':
           return {
             ...state,
-            [`player${action.payload.player}Weapon1`]: action.payload.cardId
+            [`player${action.payload.player}Weapon1`]: action.payload.cardId,
           };
         case 'weapon2':
           return {
             ...state,
-            [`player${action.payload.player}Weapon2`]: action.payload.cardId
+            [`player${action.payload.player}Weapon2`]: action.payload.cardId,
           };
         case 'armour':
           return {
             ...state,
-            [`player${action.payload.player}Armour`]: action.payload.cardId
+            [`player${action.payload.player}Armour`]: action.payload.cardId,
           };
         default:
           return state;

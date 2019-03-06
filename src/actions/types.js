@@ -5,3 +5,6 @@ export const PLACE_CARD = 'PLACE_CARD';
 export const PLAYER_ACTION = 'PLAYER_ACTION';
 export const INITIATE_COMBAT = 'INITIATE_COMBAT';
 export const RESOLVE_COMBAT = 'RESOLVE_COMBAT';
+export const GAME_EVENT = 'GAME_EVENT';
+export const WAIT_INPUT = 'WAIT_INPUT';
+export const ACTIVATE_MODAL = 'ACTIVATE_MODAL';

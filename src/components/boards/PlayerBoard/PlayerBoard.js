@@ -2,31 +2,15 @@ import React from 'react';
 import { PlayerHand } from '../PlayerHand';
 import { Deck } from '../Deck';
 import HealthTrack from './HealthTrack';
-import { races } from '../../../data/races';
 import { classes } from '../../../data/classes';
 import { weapons } from '../../../data/weapons';
 import { armours } from '../../../data/armours';
 import { hand } from '../../../data/hand';
 import { ModalButton } from '../../modals';
 import { ListCards } from '../../modals';
+import RaceCard from '../../RaceCard';
 
 class PlayerBoard extends React.Component {
-  raceCard = race => {
-    let title = 'Choose Your Race';
-    if (race !== null) {
-      title = race;
-    }
-    return (
-      <ModalButton title={title}>
-        <ListCards
-          cards={races}
-          action="chooseRace"
-          playerNumber={this.props.playerNumber}
-        />
-      </ModalButton>
-    );
-  };
-
   classCard = playerClass => {
     let title = 'Choose Your Class';
     if (playerClass !== null) {
@@ -98,7 +82,7 @@ class PlayerBoard extends React.Component {
         Player {this.props.playerNumber}
         <div className="boardBorder">
           <div className="cardArea raceArea">
-            {this.raceCard(this.props.race)}
+            <RaceCard race={this.props.race} />
           </div>
           <div className="cardArea attackOneArea">
             {this.attackCard(this.props.attack1, 1)}

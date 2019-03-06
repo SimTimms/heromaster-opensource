@@ -2,26 +2,30 @@ export const races = [
   {
     key: 'human',
     values: {
-      name: 'Human'
-    }
+      name: 'Human',
+    },
+    cards: ['wild_swings', 'mystic_dance'],
   },
 
   {
     key: 'elf',
     values: {
-      name: 'Elf'
-    }
+      name: 'Elf',
+    },
+    cards: ['wild_swings', 'mystic_dance'],
   },
   {
     key: 'dwarf',
     values: {
-      name: 'Dwarf'
-    }
+      name: 'Dwarf',
+    },
+    cards: ['wild_swings', 'mystic_dance'],
   },
   {
     key: 'halfling',
     values: {
-      name: 'Halfling'
-    }
-  }
+      name: 'Halfling',
+    },
+    cards: ['wild_swings', 'mystic_dance'],
+  },
 ];

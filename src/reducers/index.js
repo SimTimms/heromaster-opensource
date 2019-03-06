@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import monster from './monster';
 import playerActions from './playerActions';
+import game from './game';
 
 export const INITIAL_STATE = {
   player1Race: null,
@@ -24,10 +25,12 @@ export const INITIAL_STATE = {
   currentActionPlayer: null,
   currentActionTarget: null,
   currentAction: null,
-  currentActionCard: null
+  currentActionCard: null,
+  pickRaceModal: null,
 };
 
 export default combineReducers({
   monster,
-  playerActions
+  playerActions,
+  game,
 });

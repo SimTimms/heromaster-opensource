@@ -23,24 +23,13 @@ class App extends Component {
               attack2={this.props.player1Attack2}
               attack3={this.props.player1Attack3}
               playerHealth={this.props.player1Health}
+              raceModal={this.props.pickRaceModal}
             />
             <LocationBoard
               monster1={this.props.monster1}
               currentActionPlayer={this.props.currentActionPlayer}
               currentActionTarget={this.props.currentActionTarget}
               currentAction={this.props.currentAction}
-            />
-            <PlayerBoard
-              playerNumber={2}
-              race={this.props.player2Race}
-              playerClass={this.props.player2Class}
-              weapon1={this.props.player2Weapon1}
-              weapon2={this.props.player2Weapon2}
-              armour={this.props.player2Armour}
-              attack1={this.props.player2Attack1}
-              attack2={this.props.player2Attack2}
-              attack3={this.props.player2Attack3}
-              playerHealth={this.props.player2Health}
             />
           </Game>
 
@@ -55,6 +44,7 @@ class App extends Component {
 const mapStateToProps = state => {
   let monster = state.monster;
   let playerActions = state.playerActions;
+  let gameActions = state.game;
   return {
     player1Race: playerActions.player1Race,
     player2Race: playerActions.player2Race,
@@ -73,11 +63,12 @@ const mapStateToProps = state => {
     currentActionPlayer: playerActions.currentActionPlayer,
     currentActionTarget: playerActions.currentActionTarget,
     currentAction: playerActions.currentAction,
-    currentActionCard: playerActions.currentActionCard
+    currentActionCard: playerActions.currentActionCard,
+    pickRaceModal: gameActions.pickRaceModal,
   };
 };
 
 export default connect(
   mapStateToProps,
-  null
+  null,
 )(App);
